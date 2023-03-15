@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Partido" table="partidos">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="numeroJornada" column="numero_jornada"/>
+        <property name="fecha" column="fecha"/>
+        <many-to-one name="equipoLocal" column="equipo_local_id" class="Equipo"/>
+        <many-to-one name="equipoVisitante" column="equipo_visitante_id" class="Equipo"/>
+        <property name="puntosLocal" column="puntos_local"/>
+        <property name="puntosVisitante" column="puntos_visitante"/>
+    </class>
+</hibernate-mapping>

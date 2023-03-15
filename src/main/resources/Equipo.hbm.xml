@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--hacen el mapeo de la base de datos.-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Equipo" table="equipos">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="nombre" column="nombre"/>
+        <property name="puntosClasificacion" column="puntos_clasificacion"/>
+        <property name="puntosAnotados" column="puntos_anotados"/>
+        <property name="puntosEncajados" column="puntos_encajados"/>
+        <bag name="partidos" inverse="true">
+            <key column="equipo_id"/>
+            <one-to-many class="Partido"/>
+        </bag>
+    </class>
+</hibernate-mapping>
+

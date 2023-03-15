@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Liga" table="liga">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" not-null="true" unique="true" />
+        </property>
+        <bag name="equipos" table="liga_equipo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="liga_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="Equipo">
+                <column name="equipo_id" not-null="true" />
+            </many-to-many>
+        </bag>
+    </class>
+</hibernate-mapping>
