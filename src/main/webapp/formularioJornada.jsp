@@ -7,10 +7,9 @@
 </head>
 <body>
 <h1>Formulario Jornada</h1>
-<form action="jornada" method="post">
+<form action="guardarJornada" method="post">
     <label for="numero">Número de jornada:</label>
     <input type="number" id="numero" name="numero" required>
-    <input type="hidden"  name="action" value="Guardar">
     <br>
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" name="fecha" required>

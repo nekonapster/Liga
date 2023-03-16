@@ -27,8 +27,7 @@ public class PartidoServlet extends HttpServlet {
     private JornadaDAO jornadaDAO;
 
     public void init() {
-//En el método init(), se inicializa el objeto partidoDAO, equipoDAO y jornadaDAO para interactuar con la base de datos
-// utilizando Hibernate.
+
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
@@ -36,16 +35,12 @@ public class PartidoServlet extends HttpServlet {
         equipoDAO = new EquipoDAO(sessionFactory);
         partidoDAO = new PartidoDAO(sessionFactory);
     }
-
-    //El método doGet() se encarga de recuperar todos los partidos de la base de datos a través del
-    // método buscarTodosLosPartidos() del objeto partidoDAO, los almacena en el atributo "partidos" del
-    // objeto request y los envía a la página "partidos.jsp" para ser renderizados.
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Partido> partidos = partidoDAO.buscarTodosLosPartidos();
         request.setAttribute("partidos", partidos);
         request.getRequestDispatcher("partidos.jsp").forward(request, response);
     }
-//El método doPost() se encarga de manejar la solicitud para agregar un nuevo partido a la base de datos.
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int equipoLocalId = Integer.parseInt(request.getParameter("equipoLocal"));
         int equipoVisitanteId = Integer.parseInt(request.getParameter("equipoVisitante"));

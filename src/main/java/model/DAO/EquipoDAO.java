@@ -1,8 +1,5 @@
 package model.DAO;
-//uso biblioteca HIBERNATE para mapear los datos y asi evitar hacer consultas SQL.
 
-//define una clase Java llamada EquipoDAO que se utiliza para acceder a la base de datos y realizar operaciones CRUD
-// (crear, leer, actualizar y eliminar) en la tabla "Equipo".
 import model.entities.Equipo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

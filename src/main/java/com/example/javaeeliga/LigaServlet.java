@@ -1,11 +1,5 @@
 package com.example.javaeeliga;
-//En el método doGet(), se obtienen todas las ligas de la base de datos utilizando el método buscarTodasLasLigas()
-// de LigaDAO y se almacenan en un atributo "ligas" del objeto HttpServletRequest. Luego, se redirige al usuario a
-// la página "ligas.jsp" utilizando un objeto RequestDispatcher.
 
-//En el método doPost(), se obtiene el parámetro "nombre" de la solicitud y se crea una nueva instancia de Liga con
-// ese nombre. Luego, se guarda la nueva Liga en la base de datos utilizando el método guardarLiga() de LigaDAO y se
-// redirige al usuario a la página "liga" para actualizar la lista de ligas.
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
