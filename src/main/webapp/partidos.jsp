@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Lista de Partidos</h1>
-<table>
+<table border="1px"> 
     <tr>
         <th>ID</th>
         <th>Equipo Local</th>

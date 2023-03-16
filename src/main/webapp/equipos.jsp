@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Equipos</h1>
-<table>
+<table table="1px">
     <thead>
     <tr>
         <th>Nombre</th>
